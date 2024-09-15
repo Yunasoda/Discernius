@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discernius Wiki Directory">
+    <meta name="author" content="Yunasoda">
+    <title>Discernius Wiki</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #000000;
+        }
+        p {
+            font-size: 1.2em;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 20px;
+        }
+        .search-bar {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .search-bar input[type="text"] {
+            width: 50%;
+            padding: 10px;
+            font-size: 1em;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+        }
+        .wiki-directory {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .wiki-directory ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .wiki-directory li {
+            margin: 10px 0;
+            font-size: 1.2em;
+        }
+        .wiki-directory a {
+            text-decoration: none;
+            color: #007bff;
+        }
+        .wiki-directory a:hover {
+            text-decoration: underline;
+        }
+        .show-more {
+            text-align: center;
+            margin: 20px;
+        }
+        .show-more button {
+            padding: 10px 20px;
+            font-size: 1.1em;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .show-more button:hover {
+            background-color: #0056b3;
+        }
+		.back-button {
+            display: block;
+            width: 100px;
+            margin: 20px auto;
+            padding: 10px;
+            text-align: center;
+            background-color: #000000;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+		.back-button:hover {
+            background-color: #333333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Discernius Wiki Directory</h1>
+    <p>Welcome to the Discernius Wiki! Below is a list of key topics about the world of Discernius.</p>
+	<!-- Back Button to Main Page -->
+    <a href="index.html" class="back-button">Back to Main</a>
+    <!-- Search Bar -->
+    <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search the wiki...">
+    </div>
+
+    <!-- Wiki Directory List -->
+    <div class="wiki-directory">
+        <ul id="wiki-list">
+            <li><a href="wiki/history-of-discernius.html">History of Discernius</a></li>
+        </ul>
+    </div>
+
+    <!-- Show More Button -->
+    <div class="show-more" id="show-more">
+        <button id="showMoreButton">Show More</button>
+    </div>
+
+    <!-- JavaScript to Enable Sorting, Limit Results, and Search -->
+    <script>
+        // Function to sort the list alphabetically
+        function sortList() {
+            let list = document.getElementById('wiki-list');
+            let items = Array.from(list.getElementsByTagName('li'));
+
+            items.sort((a, b) => a.innerText.localeCompare(b.innerText));
+
+            // Clear the list and append sorted items
+            list.innerHTML = '';
+            items.forEach(item => list.appendChild(item));
+        }
+
+        // Function to display only the first 5 results
+        function limitResults(limit) {
+            let list = document.getElementById('wiki-list');
+            let items = Array.from(list.getElementsByTagName('li'));
+
+            // Hide all items first
+            items.forEach(item => item.style.display = 'none');
+
+            // Show only up to the limit
+            for (let i = 0; i < Math.min(items.length, limit); i++) {
+                items[i].style.display = 'list-item';
+            }
+
+            // Hide the show more button if all items are shown
+            if (limit >= items.length) {
+                document.getElementById('show-more').style.display = 'none';
+            }
+        }
+
+        // Event listener for Show More button
+        document.getElementById('showMoreButton').addEventListener('click', function() {
+            limitResults(Infinity); // Show all items
+        });
+
+        // Initialize: sort the list and limit to 5 results
+        sortList();
+        limitResults(5);
+
+        // Search Functionality
+        document.getElementById('searchInput').addEventListener('keyup', function() {
+            let input = this.value.toLowerCase();
+            let list = document.getElementById('wiki-list');
+            let items = Array.from(list.getElementsByTagName('li'));
+
+            items.forEach(item => {
+                let text = item.innerText.toLowerCase();
+                item.style.display = text.includes(input) ? 'list-item' : 'none';
+            });
+        });
+    </script>
+</body>
+</html>
