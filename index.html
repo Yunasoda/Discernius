@@ -42,6 +42,14 @@
 </head>
 <body>
 
+    <!-- Background Audio -->
+    <audio id="backgroundMusic">
+        <source src="Midnight Run.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+
+
     <!-- Hero Section -->
     <header class="py-28 text-center">
         <div class="container mx-auto">
@@ -50,6 +58,16 @@
             <p class="mt-6 text-lg md:text-xl text-gray-400">A weekly blog and wiki for all things Discernius</p>
         </div>
     </header>
+
+    <!-- Volume Controls Section -->
+    <section class="py-4 bg-gray-900 text-center">
+        <div class="container mx-auto">
+            <h3 class="text-2xl font-semibold glow text-white mb-4">Main Page Background Music</h3>
+			<button id="playButton" class="neon-button py-2 px-5 text.white hover-glow" onclick="document.getElementById('backgroundMusic').play()">Play Music</button>
+            <button id="muteButton" class="neon-button py-2 px-6 text-white hover-glow">Mute</button>
+            <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="1" class="mt-4">
+        </div>
+    </section>
 
     <!-- About Section -->
     <section class="py-20">
@@ -81,7 +99,9 @@
             <h2 class="text-5xl font-semibold glow text-white text-center mb-16">Discernius Blog</h2>
             <div class="grid gap-12 md:grid-cols-2 lg:grid-cols-3">
                 
+				<!-- Additional blog posts can be added here similarly -->
                 <!-- Blog Post Snippet Card -->
+				
                 <article class="bg-gray-800 rounded-lg shadow-xl hover-glow transition-all">
                     <div class="p-8">
                         <h3 class="text-3xl font-bold text-white mb-4">Week 1: Initial Concepts and Site Creation</h3>
@@ -93,7 +113,7 @@
                     </div>
                 </article>
 
-                <!-- Additional blog posts can be added here similarly -->
+                <!-- Do not add snippets above or below this line, Add them to the beginning -->
 
             </div>
         </div>
@@ -103,6 +123,28 @@
     <footer class="py-16 bg-black text-center">
         <p class="text-gray-500 text-sm">© 2024 Discernius by Yunasoda</p>
     </footer>
+
+    <script>
+        const audio = document.getElementById('backgroundMusic');
+        const muteButton = document.getElementById('muteButton');
+        const volumeSlider = document.getElementById('volumeSlider');
+
+        // Mute/Unmute functionality
+        muteButton.addEventListener('click', () => {
+            if (audio.muted) {
+                audio.muted = false;
+                muteButton.textContent = 'Mute';
+            } else {
+                audio.muted = true;
+                muteButton.textContent = 'Unmute';
+            }
+        });
+
+        // Volume control functionality
+        volumeSlider.addEventListener('input', (e) => {
+            audio.volume = e.target.value;
+        });
+    </script>
 
 </body>
 </html>
