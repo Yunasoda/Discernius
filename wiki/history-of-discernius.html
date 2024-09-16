@@ -11,7 +11,7 @@
         body {
             font-family: 'Georgia', serif;
             line-height: 1.6;
-            background-color: #d1d1d1;
+            background-color: #000000;
             color: #333;
             margin: 0;
             padding: 0;
@@ -19,26 +19,27 @@
         .container {
             max-width: 960px;
             margin: 20px auto;
-            background-color: #ffffff;
+            background-color: #444444;
             padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
         }
         h1 {
             font-size: 2em;
             margin-bottom: 10px;
-            color: #000;
+            color: #98FB98;
         }
         h2, h3 {
-            color: #000;
+            color: #98FB98;
             margin-top: 30px;
         }
         p {
             font-size: 1em;
             text-align: justify;
             margin-bottom: 20px;
+			color: #98FB98;
         }
         a {
-            color: #0645ad;
+            color: #00BFFF;
             text-decoration: none;
         }
         a:hover {
@@ -48,11 +49,11 @@
             float: right;
             width: 250px;
             margin-left: 20px;
-            background-color: #f9f9f9;
-            border: 1px solid #a2a9b1;
+            background-color: #6d6d6d;
+            border: 1px solid #000000;
             padding: 10px;
             font-size: 0.9em;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
         }
         .infobox img {
             max-width: 100%;
@@ -62,25 +63,31 @@
         .infobox h2 {
             font-size: 1.2em;
             margin-bottom: 10px;
-            color: #000;
+            color: #F0F0F0;
         }
         .infobox p {
             margin: 5px 0;
             text-align: left;
+			color: #F0F0F0;
         }
+		.infobox a {
+			color: #214ed4;
+		}
         .toc {
-            float: left;
+            float: left; /* Make the TOC float on the left */
             width: 200px;
-            background-color: #f9f9f9;
-            border: 1px solid #a2a9b1;
+            background-color: #6d6d6d;
+            border: 1px solid #000;
             padding: 10px;
             font-size: 0.9em;
             margin-right: 20px;
-            margin-bottom: 20px;
+            margin-bottom: 20px; /* Add margin at the bottom */
+			box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
         }
         .toc h2 {
             font-size: 1.2em;
             margin-bottom: 10px;
+			color: #F0F0F0;
         }
         .toc ul {
             list-style-type: none;
@@ -90,27 +97,27 @@
             margin-bottom: 5px;
         }
         .toc li a {
-            color: #0645ad;
+            color: #214ed4;
         }
         blockquote {
-            border-left: 3px solid #cccccc;
+            border-left: 3px solid #6d6d6d;
             padding-left: 10px;
             margin-left: 0;
             font-style: italic;
-            color: #555;
+            color: #bfbfbf;
         }
         .citation {
             font-size: 0.9em;
-            color: #555;
+            color: #bfbfbf;
         }
         .citation a {
-            color: #0645ad;
+            color: #00fff5;
         }
         footer {
             text-align: center;
             padding: 20px;
             font-size: 0.8em;
-            color: #777;
+            color: #e4e4e4;
         }
         .back-button {
             display: block;
@@ -128,12 +135,12 @@
         .back-button:hover {
             background-color: #333333;
         }
-        .caption {
-            font-size: 0.9em;
-            color: #666;
-            text-align: center;
-            margin-top: 5px;
-        }
+		.caption {
+			font-size: 0.9em;
+			color: #666;
+			text-align: center;
+			margin-top: 5px;
+		}
     </style>
 </head>
 <body>
@@ -143,6 +150,7 @@
         <a href="../wiki-directory.html" class="back-button">Back to Wiki</a>    
 
         <h1>History of Discernius</h1>
+		<hr>
 
         <!-- Table of Contents -->
         <div class="toc">
