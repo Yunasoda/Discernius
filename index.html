@@ -1,130 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<link rel="icon" href="discernius-logo.png" type="image/png">
     <meta charset="utf-8">
-    <meta name="description" content="A blog on the development of Discernius">
+    <meta name="description" content="A cutting-edge exploration of the Discernius galaxy">
     <meta name="author" content="Yunasoda">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>All Things Discernius</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="discernius-logo.png" type="image/png">
+    <!-- Google Fonts for sleek futuristic typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #ffffff; /* White background */
-            color: #000000; /* Black text */
-            margin: 0;
-            padding: 20px;
+            font-family: 'Orbitron', sans-serif;
+            scroll-behavior: smooth;
+            background: linear-gradient(160deg, #0a0a0a, #0f0f0f);
+            color: rgba(255, 255, 255, 0.85);
+            overflow-x: hidden;
         }
-        h1 {
-            text-align: center;
-            color: #000000; /* Black title */
+        .glow {
+            text-shadow: 0 0 15px #00e5ff;
         }
-        h2, h3 {
-            text-align: center;
-            color: #000000; /* Black subheadings */
+        .hover-glow:hover {
+            box-shadow: 0 0 30px 10px rgba(0, 229, 255, 0.8);
+            transform: translateY(-10px);
+            transition: transform 0.2s, box-shadow 0.2s;
         }
-        p {
-            font-size: 1.2em;
-            line-height: 1.6;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 10px;
-            color: #000000; /* Black paragraph text */
+        .neon-button {
+            background: linear-gradient(100deg, #00e5ff, #00ff6e, #00ffb2);
+            border-radius: 100px;
+            transition: background 0.2s ease-in-out;
         }
-        .post-snippet {
-            font-size: 1.1em;
-            margin-bottom: 30px;
-            text-align: left;
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 15px;
-            border: 1px solid #dddddd; /* Light border around post */
-            border-radius: 8px; /* Rounded corners for post boxes */
-            background-color: #f8f8f8; /* Light grey background for posts */
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+        .neon-button:hover {
+            background: linear-gradient(100deg, #00ffb2, #00ff6e, #00e5ff);
         }
-        .post-snippet a {
-            text-decoration: none;
-            color: #007bff; /* Blue link color */
-            font-weight: bold;
+        .container {
+            max-width: 80%;
         }
-        .post-snippet a:hover {
-            text-decoration: underline;
-        }
-        .post-snippet p {
-            display: inline;
-            color: #333333; /* Dark grey text for post description */
-        }
-        .post-title {
-            font-size: 1.3em;
-            margin-bottom: 10px;
-            color: #000000; /* Post title in black */
-        }
-        .post-date {
-            font-size: 0.9em;
-            color: #666666; /* Grey for post date */
-            margin-bottom: 10px;
-        }
-
-        /* Wiki Section */
-        .wiki-section {
-            text-align: center;
-			max-width: 1000px;
-            margin: 40px auto;
-            padding: 20px;
-			border: 1px solid #000000;
-            background-color: #f1f1f1;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-        }
-        .wiki-section h2 {
-            font-size: 1.6em;
-            color: #000000;
-            margin-bottom: 20px;
-        }
-        .wiki-section a {
-            display: inline-block;
-            background-color: #007bff; /* Blue button */
-            color: #ffffff; /* White text */
-            padding: 10px 20px;
-            text-decoration: none;
-            font-size: 1.2em;
-            border-radius: 5px;
-        }
-        .wiki-section a:hover {
-            background-color: #0056b3; /* Darker blue on hover */
-        }
-		
     </style>
 </head>
 <body>
-    <h1>All Things Discernius</h1>
-    <p>Created by Yunasoda<br>A weekly blog and wiki for all things Discernius</p>
 
-    <h2>About Discernius:</h2>
-    <p>
-        Discernius is a vast, dystopian galaxy where technology dominates and ancient forces linger. The atmosphere is dark and oppressive, with fractured political systems, constant power struggles, and a sense of deep control over its inhabitants. Amid this, mysterious elements of magic exist, though rarely understood.
-    </p>
-    <p>
-        The world of Discernius is defined by its complexity—where survival requires navigating a realm shaped by ambition, secrecy, and the uneasy balance between progress and ancient power.
-    </p>
+    <!-- Hero Section -->
+    <header class="py-28 text-center">
+        <div class="container mx-auto">
+            <h1 class="text-6xl md:text-8xl font-bold glow text-white mb-6">All Things Discernius</h1>
+            <p class="text-2xl md:text-3xl text-cyan-400 tracking-wide">Created by Yunasoda</p>
+            <p class="mt-6 text-lg md:text-xl text-gray-400">A weekly blog and wiki for all things Discernius</p>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section class="py-20">
+        <div class="container mx-auto max-w-4xl text-center">
+            <h2 class="text-5xl font-semibold glow text-white mb-10">What is Discernius?</h2>
+            <p class="mb-10 text-gray-300 leading-relaxed">
+                Discernius is a vast, dystopian galaxy where technology dominates and ancient forces linger. The atmosphere is dark and oppressive, with fractured political systems, constant power struggles, and a sense of deep control over its inhabitants. Amid this, mysterious elements of magic exist, though rarely understood.
+            </p>
+            <p class="text-gray-300 leading-relaxed">
+				The world of Discernius is defined by its complexity—where survival requires navigating a realm shaped by ambition, secrecy, and the uneasy balance between progress and ancient power.
+            </p>
+        </div>
+    </section>
 
     <!-- Wiki Section -->
-    <div class="wiki-section">
-        <h2>Explore the Discernius Wiki</h2>
-        <p>Discover detailed information about the factions, technology, and magic within the Discernius galaxy.</p>
-        <a href="wiki-directory.html">Go to the Wiki</a>
-    </div>
+    <section id="wiki" class="py-20 bg-gray-900 text-center">
+        <div class="container mx-auto">
+            <h2 class="text-5xl font-semibold glow text-white mb-8">Enter the Discernius Wiki</h2>
+            <p class="text-gray-400 mb-12">
+                Dive into the intricate history, the shifting alliances, and the groundbreaking technologies of the Discernius universe.
+            </p>
+            <a href="wiki-directory.html" class="neon-button py-4 px-12 text-white hover-glow">Explore the Wiki</a>
+        </div>
+    </section>
 
-    <h2>Weekly Blog:</h2>
+    <!-- Blog Section -->
+    <section class="py-20">
+        <div class="container mx-auto">
+            <h2 class="text-5xl font-semibold glow text-white text-center mb-16">Discernius Blog</h2>
+            <div class="grid gap-12 md:grid-cols-2 lg:grid-cols-3">
+                
+                <!-- Blog Post Snippet Card -->
+                <article class="bg-gray-800 rounded-lg shadow-xl hover-glow transition-all">
+                    <div class="p-8">
+                        <h3 class="text-3xl font-bold text-white mb-4">Week 1: Initial Concepts and Site Creation</h3>
+                        <p class="text-gray-400 mb-4">Posted on September 15, 2024</p>
+                        <p class="text-gray-400 leading-relaxed">
+                            For the first week of the blog, I wanted to emphasize that I started working . . .
+                        </p>
+                        <a href="posts/week1-initial-concept.html" class="block mt-6 text-cyan-400 hover:underline">Read More</a>
+                    </div>
+                </article>
 
-    <div class="post-snippet">
-        <h3 class="post-title">Week 1: Initial Concepts and Site Creation</h3>
-        <p class="post-date">Posted on September 15, 2024</p>
-        <p>"For the first week of the blog, I wanted to emphasize that I started working on . . ."</p>
-        <a href="posts/week1_initial_concept.html">Read more</a>
-    </div>
+                <!-- Additional blog posts can be added here similarly -->
 
-    <!-- Add more posts here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-16 bg-black text-center">
+        <p class="text-gray-500 text-sm">© 2024 Discernius by Yunasoda</p>
+    </footer>
+
 </body>
 </html>
